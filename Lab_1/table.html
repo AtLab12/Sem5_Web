@@ -1,12 +1,10 @@
-<html>
+ <!DOCTYPE html>
+<html lang="pl-PL">
     <head>
         <meta charset="utf-8">
         <title>Tabelka</title>
         <meta name="description" content="tabelka Ostrów Wielkopolski">
         <meta name="keywords" content="ostrow wielkopolski tabelka">
-    </head>
-    <body>
-        <a href="index.html">Powrót do strony głównej</a>
         <style>
             table, th, td {
                 border: 1px solid black;
@@ -15,7 +13,10 @@
             th, td {
                 padding: 15px;
             }
-        </style>  
+        </style> 
+    </head>
+    <body>
+        <a href="index.html">Powrót do strony głównej</a>
         <table>
             <tr>
                 <th>Imię</th>
@@ -23,12 +24,12 @@
                 <th>Wiek</th>
             </tr>
             <tr >
-                <td colspan=2>Jan długi</td>
+                <td colspan="2">Jan długi</td>
                 <td>20</td>
             </tr>
-            <tr >
+            <tr>
                 <td>Jan</td>
-                <td rowspan=2>Kowalski</td>
+                <td rowspan="2">Kowalski</td>
                 <td>20</td>
             </tr>
             <tr>
@@ -38,13 +39,16 @@
             </tr>
             <tr>
                 <td>Jan</td>
-                <td><table>
-                    <tr>
-                        <td>Jan</td>
-                        <td>Kowalski</td>
-                        <td>20</td>
-                    </tr>
-                </table></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Jan</td>
+                            <td>Kowalski</td>
+                            <td>20</td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
         </table>
+    </body>
 </html>
