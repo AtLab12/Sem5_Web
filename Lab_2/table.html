@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="utf-8">
+        <title>Tabelka</title>
+        <meta name="description" content="tabelka Ostrów Wielkopolski">
+        <meta name="keywords" content="ostrow wielkopolski tabelka">
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 15px;
+            }
+        </style> 
+    </head>
+    <body>
+        <a href="index.html">Powrót do strony głównej</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Wiek</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2"><h5>Jan długi</h5></td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Jan</td>
+                    <td rowspan="2">Kowalski</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Jan</td>
+                    <td>Kowalski</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Jan</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>Jan</td>
+                                <td>Kowalski</td>
+                                <td>20</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
