@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="utf-8">
+        <title>Formularz</title>
+        <meta name="description" content="formularz Ostrów Wielkopolski">
+        <meta name="keywords" content="ostrow wielkopolski formularz">
+    </head>
+    <body>
+        <a href="index.html">Powrót do strony głównej</a>
+        <form action="form.php" method="post" id="form" autocomplete="on">
+
+            <fieldset>
+                <label for="favcolor">Choose a color:</label>
+                <input type="color" name="favcolor" value="#ff0000"><br>
+                <label for="month">Choose a month:</label>
+                <input type="month" name="month" placeholder="1"><br>
+                <label for="renge">Choose a number between 1 and 10:</label>
+                <input type="range" name="renge" min="1" max="10" placeholder="5"><br>
+                <label for="search">Search:</label>
+                <input type="search" name="search" placeholder="wyszukaj"><br>
+                <label for="url">URL:</label>
+                <input type="url" name="url"><br>
+                
+            </fieldset>
+        </form> 
+    </body>
+</html>
