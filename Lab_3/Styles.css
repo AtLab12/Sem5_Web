@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: linear-gradient(#d5a5b1, white);
   }
   
   .logo {
@@ -53,10 +54,49 @@ body {
     line-height: 100px;
     padding-left: 2em; 
  }
-
   /* Home dog  */
 
   .homeDog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100pt;
+    margin-bottom: 500pt;
+  }
+
+  /* Golden */
+
+  .GoldenDog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100pt;
+  }
+
+  .GoldenDesc {
+    background-image: url("https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif?cid=ecf05e47rtc2wi8ta8rb00htl3xkoaxi4hpg90uv5vzno095&rid=giphy.gif&ct=g");
+    background-repeat: round;
+  }
+  .GoldenInfo {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 500pt;
+    background-image: url(book.png);
+    background-repeat: repeat-y;
+    background-size: 50px;
+    background-attachment: fixed;
+    background-position: center; 
+  }
+
+  /* Labrador */
+
+  .LabradorDog {
     display: block;
     margin-left: auto;
     margin-right: auto;
