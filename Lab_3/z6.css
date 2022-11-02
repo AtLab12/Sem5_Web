@@ -1,0 +1,126 @@
+table {
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom : 5px solid pink;
+    border-style: dotted;
+    border-color: rgb(15, 41, 212);
+    border-width: 2px;
+}
+tr {
+    text-align: left;
+
+  }
+td {
+    text-align: right;
+}
+tr:hover {
+    background-color: #dd2424;
+}
+
+.uno{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(15, 41, 212);
+    text-align: center;
+    line-height: 1.5;
+    font-style: italic;
+    font-variant: small-caps;
+}
+.dos{
+    font-size: 20px;
+    font-weight:200;
+    color: rgb(255, 0, 68);
+    text-align: right;
+    line-height: 1.5;
+    font-style: oblique;
+    font-variant: small-caps;
+}
+.box1{ 
+margin-left: 56px;
+width: 200px;
+height: 200px;
+position: relative;
+background-color: rgb(163, 146, 151);
+left:100px
+}
+.box2{ 
+    width: 344px;
+    height: 100px;
+    position:static;
+    background-color: rgb(171, 71, 101);
+}
+.box3{ 
+    position:fixed;
+    width: 344px;
+    height: 100px;
+    background-color: rgb(63, 39, 46);
+    top: 0px;
+    right: 5px;
+} 
+@media screen and (max-width: 600px) {
+    .box1 {
+        width: 100px;
+        height: 100px;
+        margin-left: 0px;
+    }
+    .box2 {
+        width: 100px;
+        height: 100px;
+    }
+    .box3 {
+        width: 100px;
+        height: 100px;
+    }
+}
+input {
+    padding: 5px;
+}
+input:enabled{
+    background-color: rgb(0, 255, 8);
+}
+input:disabled{
+    background-color: rgb(255, 0, 0);
+}
+input:active{
+    background-color: rgb(0, 0, 255);
+}
+input:checked{
+    outline: 2px solid deeppink;
+    background-color: rgb(255, 255, 0);
+}
+div:first{ 
+    background-color: rgb(255, 0, 0);
+}
+div:last-of-type{
+    background-color: rgb(0, 255, 0);
+}
+
+input:focus{
+    outline: 8px dotted rgb(255, 63, 20);
+}
+td:last-child{
+    outline: 2px solid rgb(230, 0, 255);
+}
+td:first-child{
+    outline: 2px solid rgb(38, 0, 255);
+}
+a:link{
+    color: rgb(255, 0, 0);
+}
+input:required{
+    outline: 2px solid rgb(255, 0, 0);
+}
+p:nth-child(2){
+    background-color: rgb(0, 225, 255);
+}
+b:only-child{
+    background-color: rgb(255, 234, 0);
+}
+div:target{
+    background-color: rgb(255, 0, 0);
+}
+a:visited{
+    color: rgb(0, 255, 0);
+}
