@@ -1,4 +1,4 @@
-console.log("dupa")
+console.log("AAA")
 
 const randomMonth = () => {
     const month = Math.floor(Math.random() * 12)
