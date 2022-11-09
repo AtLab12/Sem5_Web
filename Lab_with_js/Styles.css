@@ -1,0 +1,150 @@
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(#d5a5b1, white);
+  }
+
+  div > p {
+    background-color: green;
+  }
+
+  .logo {
+    height: auto;
+    width: 10%;
+  }
+  /* Navigation Bar */
+  
+  #navigation-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+  }
+  
+  .navigation-bar {
+    background-color: #d5a5b1;
+    height: 150px;
+    width: 100%;
+    text-align:right;
+  }
+  .navigation-bar img{
+    float:left;
+    margin-top: 20pt;
+  }
+
+  .navigation-bar ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align: top;
+    margin-top: 20pt;
+  }
+  
+  .navigation-bar li {
+    list-style-type: none;
+    padding: 0px;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+  }
+  
+  .navigation-bar li a {
+    color: black;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 100px;
+    padding-left: 2em; 
+ }
+  /* Home dog  */
+
+  .homeDog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100pt;
+    margin-bottom: 500pt;
+  }
+
+  /* Golden */
+
+  .GoldenDog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100pt;
+  }
+
+  .GoldenDesc {
+    background-image: url("https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif?cid=ecf05e47rtc2wi8ta8rb00htl3xkoaxi4hpg90uv5vzno095&rid=giphy.gif&ct=g");
+    background-repeat: round;
+  }
+  .GoldenInfo {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-image: url(book.png);
+    background-repeat: repeat-y;
+    background-size: 50px;
+    background-attachment: fixed;
+    background-position: center; 
+  }
+
+  .Static {
+    position: Static;
+  }
+
+  .Absolute {
+    position: absolute;
+  }
+
+  .Relative {
+    position: relative;
+  }
+
+  .Fixed {
+    position: fixed;
+  }
+
+  /* Labrador */
+
+  .LabradorDog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100pt;
+  }
+
+  .LabradorInfo {
+    background: orange;
+  }
+
+  /* Husky */
+
+  .HuskyDog {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100pt;
+  }
+
+span {
+  background-color: aqua;
+}
+
+div.HuskyTitle {
+  background-color: yellow;
+}
