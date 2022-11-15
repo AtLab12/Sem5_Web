@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="answersJs.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript2</title>
+</head>
+<body>
+    <button onclick="createParagraph()">Create new element</button>
+    <button onclick="createNewText()">Create paraghraph with text node</button><br>
+    <button onclick="invertDivs('parent');">Invert Text</button>
+    <button onclick="replacePlaneWithBike()">Replace plane with bike</button><br>
+    <button onclick="removeLastElement()">Remove last element from list</button>
+    <button onclick="presentParentNodeCapability()">Add new note</button>
+    <div id="parent">
+        <div id="first">Number 1</div>
+        <div id="second">Number 2</div>
+    </div>
+    <ul id="exampleList">
+        <li>Plane</li>
+        <li id="carID">Car</li>
+    </ul>
+
+    <ul id="appendableList">
+
+    </ul>
+    <div id="notes">
+        <p class="firstNote">First note</p>
+        <p class="secondNote">Second note</p>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <form action="#" class="form">
+        <div class="nameSection">
+            <label>Input: </label>
+            <input type="text" onfocus="showNameHelp()" onblur="hideHelp()" id="focus">
+        </div>
+        <button onclick="resetConfirmation()">Reset</button>
+        <button onclick="sendConfirmation()">Submit</button>
+    </form>
+</body>
+</html>
