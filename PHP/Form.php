@@ -79,7 +79,7 @@
         $firstResult = strcmp($name, $compareName) !== 0;
         $secondResult = ($name !== $compareName);
 
-        $nameMessage = "Function comparison result: {$firstResult}. Operator comparison result {$secondResult}.";
+        $nameMessage = "Function comparison result (\$firstResult): {$firstResult}. Operator comparison result {$secondResult}.";
     }
     chainThings();
 
@@ -92,8 +92,8 @@
     <head>
         <meta charset="utf-8">
         <title>Formularz</title>
-        <meta name="description" content="formularz Ostrów Wielkopolski">
-        <meta name="keywords" content="ostrow wielkopolski formularz">
+        <meta name="description" content="formularz php">
+        <meta name="keywords" content="php formularz">
     </head>
     <body>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="form" autocomplete="on">
@@ -150,4 +150,8 @@
         </form> 
     </body>
 </html>
+<?php echo $_SERVER['REMOTE_ADDR']?><br>
 <?php die("Script dies here");?>
+
+// Pojedyńczy wyświetla dosłownie to co jest międzi ' '
+// Podwójny pozwala na wywołanie operacji np. interpolacji 
