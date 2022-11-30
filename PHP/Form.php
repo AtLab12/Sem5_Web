@@ -9,6 +9,7 @@
 
         define("age", $_POST["age_name"]);
         $ageMessage = (string) age;
+        settype($ageMessage, 'string');
     }
 
     function validateEmail($email) {
@@ -43,7 +44,7 @@
         global $tablesMessage;
 
         $cars = array("Volvo", "Daweoo", "Volkswagen");
-        $totalCount = count($cars);
+        $totalCount = count($cars); 
         $current = current($cars);
         $next = next($cars);
         $afterReset = reset($cars);
@@ -66,7 +67,7 @@
         $phones = array("iPhone"=>"awesome", "Samsung"=>"Ok", "Xiaomi"=>"Shit");
         $review = $phones['iPhone'];
 
-        $tablesMessage = "iPhones is: {$review}. Best car brand is: {$first}";
+        $tablesMessage = "iPhone is: {$review}. Best car brand is: {$first}";
     }
     tablesDemo();
 
@@ -149,3 +150,4 @@
         </form> 
     </body>
 </html>
+<?php die("Script dies here");?>
