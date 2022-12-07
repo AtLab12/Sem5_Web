@@ -62,13 +62,18 @@ Jeśli serwer uzywa cookies to zwraca je w Set-Cookie:name=value.
 
 Jeśli klient wysyła to w Set-Cookie:name=value.
 
-setcookie() defines a cookie to be sent along with the rest of the HTTP headers. Like other headers, cookies must be sent before any output from your script (this is a protocol restriction). This requires that you place calls to this function prior to any output, including < html> and < head> tags as well as any whitespace.
+setcookie() defines a cookie to be sent along with the rest of the HTTP headers.
+Like other headers, cookies must be sent before any output from your script (this is a protocol restriction).
+This requires that you place calls to this function prior to any output, including < html> and < head> tags as well as any whitespace.
 
-Alternatywą dla ciasteczek jest local storage. Z perspektywy zapisywania dla nych daje nam praktycznie taki sam efekt, 
-ale inne jest API do jego dostępu. 
+Alternatywą dla ciasteczek jest local storage. Z perspektywy zapisywania danych daje nam praktycznie taki sam efekt, 
+ale inne jest API dostępu. 
 
 
+session_start() creates a session or resumes the current one based on a session identifier passed via a GET or POST request, or passed via a cookie.
 
-
+When session_start() is called or when a session auto starts, PHP will call the open and read session save handlers. These will either be a built-in save handler provided by default or by PHP extensions
+(such as SQLite or Memcached); or can be custom handler as defined by session_set_save_handler(). The read callback will retrieve any existing session data (stored in a special serialized format) and will
+be unserialized and used to automatically populate the $_SESSION superglobal when the read callback returns the saved session data back to PHP session handling.
 */
 ?>
