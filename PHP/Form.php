@@ -49,13 +49,17 @@
         $next = next($cars);
         $afterReset = reset($cars);
         $first = $cars[0];
-
+        echo $first;
         echo "
         Car choices are:";
         foreach($cars as &$value) {
             echo "{$value}";
         }
         # if you know how. Fix the formating
+        // comment 
+        /*
+        comment
+        */
         echo "
         Total count: {$totalCount}.
         Test reset:
@@ -64,7 +68,7 @@
         After reset: {$afterReset}
         ";
 
-        $phones = array("iPhone"=>"awesome", "Samsung"=>"Ok", "Xiaomi"=>"Shit");
+        $phones = array("iPhone"=>"awesome", "Samsung"=>"Ok", "Xiaomi"=>"No, thank you");
         $review = $phones['iPhone'];
 
         $tablesMessage = "iPhone is: {$review}. Best car brand is: {$first}";
@@ -153,5 +157,4 @@
 <?php echo $_SERVER['REMOTE_ADDR']?><br>
 <?php die("Script dies here");?>
 
-// Pojedyńczy wyświetla dosłownie to co jest międzi ' '
-// Podwójny pozwala na wywołanie operacji np. interpolacji 
+2
