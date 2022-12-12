@@ -8,8 +8,8 @@ $cookie_name = "backgroundColor";
 cookieAction();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ($_POST["BackgroundColor"] !== "#000000") { // to avoid setting the default value
-        setcookie($cookie_name, $_POST["BackgroundColor"], time() + 10); // change to 60 to comply with the task 
+    if ($_POST["BackgroundColor"] !== "#000000") {
+        setcookie($cookie_name, $_POST["BackgroundColor"], time() + 10);
         $color = $_POST["BackgroundColor"];
         $_SESSION["backColor"] = $_POST["BackgroundColor"];
     }
