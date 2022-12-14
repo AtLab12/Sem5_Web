@@ -26,7 +26,8 @@
 
     function mathThings() {
         global $mathMessage;
-        $age =  $_POST["age_name"];
+        $funnam = "age";
+        $$funnam =  $_POST["age_name"];
         $fiveMore = $age + 5;
         $isOld = $age > 18;
         $mathLaws = $age + 2 * 5;

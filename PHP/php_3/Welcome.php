@@ -78,7 +78,7 @@ if(isset($_SESSION['username'])){
 <br>
 <?php
 $query = "SELECT * FROM USER";
-echo "<b> <center>Database Output</center> </b> <br> <br>";
+echo quotemeta("<b> <center>Database Output</center> </b> <br> <br>");
 
 if ($result = mysqli_query($conn, $query)) {
     while ($row = $result->fetch_assoc()) {
