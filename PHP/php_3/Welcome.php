@@ -1,12 +1,12 @@
 <?php
 session_start();
-$servername = "localhost";
+$servername = "127.0.0.1";
 $locUsername = "root"; // sql server user name 
-$locPassword = "12345678"; // sql server password 
+$locPassword = ""; // sql server password 
 $databasName = "DBName";
 $_SESSION["dbName"] = $databasName;
 
-$conn = new mysqli($servername, $locUsername, $locPassword, $databasName, 8000);
+$conn = new mysqli($servername, $locUsername, $locPassword, $databasName, 3306);
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
