@@ -41,13 +41,14 @@ public class ProductService {
     
         while (it.hasNext()) {
             Document temp = (Document) it.next();
-
+            
             productList.add(gson.fromJson(temp.get("product").toString(), Product.class));
         }
        
         
         for (Product product : productList) {
             Document doc = new Document("name", product.getName())
+                .append("id", product.getId())
                 .append("product", gson.toJson(product));
             collection.insertOne(doc);
         }
@@ -75,12 +76,17 @@ public class ProductService {
         while (iter.hasNext()) {
             var doc = iter.next();
             ret.add(gson.fromJson(doc.get("product").toString(), Product.class));
+                return ret.get(0);
         }
-        return ret.get(0);
+        return null;
     }
 
     public void addProduct(Product product) {
-        db.getCollection("products").insertOne(new Document("product", gson.toJson(product)));
+        var toadd = new Document("product", gson.toJson(product)).
+                    append("id", product.getId())
+                    .append("name", product.getName()).
+                    append("category", product.getCategory());
+        db.getCollection("products").insertOne(toadd);
     }
 
     public Product getProduct(Product product){
@@ -91,7 +97,12 @@ public class ProductService {
         var iter = db.getCollection("products").find(eq("id",product.getId())).iterator();
         while (iter.hasNext()) {
             var doc = iter.next();
-            db.getCollection("products").updateOne(doc, new Document("product", gson.toJson(product)));
+            db.getCollection("products").deleteOne(doc);
+            var toadd = new Document("product", gson.toJson(product)).
+                    append("id", product.getId())
+                    .append("name", product.getName()).
+                    append("category", product.getCategory());
+            db.getCollection("products").insertOne(toadd);
         }
     }
 
@@ -136,10 +147,25 @@ public class ProductService {
     public void updateCategory(Category category) {
         var id = category.getId();
         var iter = db.getCollection("categories").find(eq("id",id)).iterator();
+        var oldname = "";
+
         while (iter.hasNext()) {
             var doc = iter.next();
+            oldname = gson.fromJson(doc.get("category").toString(), Category.class).getName();
             db.getCollection("categories").deleteOne(doc);
             db.getCollection("categories").insertOne(new Document("id", category.getId()).append("category", gson.toJson(category)));
+        }
+        iter = db.getCollection("products").find(eq("category",oldname)).iterator();
+        while(iter.hasNext())
+        {
+            var doc = iter.next();
+            var product = gson.fromJson(doc.get("product").toString(), Product.class);
+            product.setCategory(category.getName());
+            db.getCollection("products").deleteOne(doc);
+            db.getCollection("products").insertOne(new Document("product", gson.toJson(product)).
+                    append("id", product.getId())
+                    .append("name", product.getName()).
+                    append("category", product.getCategory()));
         }
     }
 

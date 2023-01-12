@@ -12,6 +12,7 @@
 <form action="#" th:action="@{/category/edit}" th:object="${category}" method="post">
   <p>Name: <input type="text" th:field="*{name}" /></p>
   <p>Kod: <input type="number" step="0.01" th:field="*{code}" /></p>
+  <input type="text" th:field="*{id}" th:readonly="true" />
   <p><input type="submit" value="Modify" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>

@@ -88,9 +88,9 @@ public class ProductController {
         return "redirect:/product/";
     }
 
-    @PostMapping(value = {"/category/delete"})
-    public String deleteCategory(@ModelAttribute Category category){
-        productService.deleteCategory(category);
+    @GetMapping(value = {"/category/remove"})
+    public String deleteCategory(@RequestParam("id") String id){
+        productService.deleteCategoryById(id);
         return "redirect:/product/";
     }
 
