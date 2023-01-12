@@ -34,6 +34,7 @@ public class ProductController {
     @GetMapping("/product/add")
     public String add(Model model){
         model.addAttribute("product", new Product());
+        model.addAttribute("categories",productService.getAllCategories());
         return "product/add";
     }
 
@@ -73,6 +74,12 @@ public class ProductController {
     public String editCategory(Model model, @PathVariable String id){
         model.addAttribute("category", productService.getCategoryById(id));
         return "category/edit";
+    }
+
+    @GetMapping(value = {"/product/category/add"})
+    public String addCategory(Model model){
+        model.addAttribute("category", new Category());
+        return "category/add";
     }
 
     @PostMapping(value = {"/category/add"})

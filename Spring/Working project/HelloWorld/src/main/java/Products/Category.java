@@ -9,7 +9,7 @@ public class Category implements Serializable {
     private String code;
 
     public Category() {
-        this.id = UUID.randomUUID().toString();s
+        this.id = UUID.randomUUID().toString();
     }
 
     /**

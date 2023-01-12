@@ -13,6 +13,8 @@
   <p>Name: <input type="text" th:field="*{name}" /></p>
   <p>Weight: <input type="number" step="0.01" th:field="*{weight}" /></p>
   <p>Price: <input type="number" step="0.01" th:field="*{price}" /></p>
-  <p>Category: <input type="text" th:field="*{category}" /></p>
+  <label for="categories">
+    <select name="categories" id="categories">
+      <option th:each="category : ${categoryList}" th:value="${category.id}" th:text="${category.name}"></option>
   <p><input type="submit" value="Add" /> <input type="reset" value="Reset" /></p>
 </form></body></html>
