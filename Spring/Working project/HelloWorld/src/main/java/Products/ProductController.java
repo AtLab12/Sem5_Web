@@ -21,6 +21,7 @@ public class ProductController {
         Date date = new Date();
         List<Product> productList = productService.getAllProducts();
         model.addAttribute("productList", productList);
+        model.addAttribute("categoryList", productService.getAllCategories());
         return "product/index";
     }
 
@@ -65,4 +66,32 @@ public class ProductController {
         productService.updateProduct(product);
         return "redirect:/product/";
     }
+
+    
+
+    @GetMapping(value = {"/category/{id}/edit"})
+    public String editCategory(Model model, @PathVariable String id){
+        model.addAttribute("category", productService.getCategoryById(id));
+        return "category/edit";
+    }
+
+    @PostMapping(value = {"/category/add"})
+    public String addCategory(@ModelAttribute Category category){
+        productService.addCategory(category);
+        return "redirect:/product/";
+    }
+
+    @PostMapping(value = {"/category/delete"})
+    public String deleteCategory(@ModelAttribute Category category){
+        productService.deleteCategory(category);
+        return "redirect:/product/";
+    }
+
+    @PostMapping(value = {"/category/edit"})
+    public String editCategory(@ModelAttribute Category category) {
+        productService.updateCategory(category);
+        return "redirect:/product/";
+    }
+
+
 }

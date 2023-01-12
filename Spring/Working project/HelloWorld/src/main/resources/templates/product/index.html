@@ -47,6 +47,23 @@
         </tr>
     </tbody>
 </table>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>action</th>
+    </thead>
+    <tbody>
+        <tr th:each="category : ${categoryList}">
+            <td th:text= "${category.getId()}"></td>
+            <td th:text= "${category.getName()}"></td>
+            <td th:text= "${category.getCode()}"></td>
+            <td><a class="btn btn-primary" th:href="@{/category/{categoryId}/edit(categoryId=${category.getId()})}">edit</a></td>
+            <td><a class="btn btn-danger" th:href="@{/category/remove(id=${category.id})}">remove</a></td>
+        </tr>
+    </tbody>
+</table>
 </div>
 </main>
 </body>

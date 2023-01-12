@@ -1,7 +1,8 @@
 package Products;
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Product {
+public class Product implements Serializable {
     private String id;
     private String name;
     private double weight;

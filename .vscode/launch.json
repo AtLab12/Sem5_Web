@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProductsApplication<HelloWorld>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "Products.ProductsApplication",
+            "projectName": "HelloWorld",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HelloWorldApplication<HelloWorld>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.helloworld.HelloWorldApplication",
+            "projectName": "HelloWorld",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
