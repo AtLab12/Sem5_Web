@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.util.Date;
@@ -23,8 +25,8 @@ public class ProductController {
     
 
     @GetMapping("/product/")
-    public String home(Locale locale, Model model){
-        
+    public String home(Locale locale, Model model, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         Date date = new Date();
         List<Product> productList = productService.getAllProducts();
         model.addAttribute("productList", productList);
@@ -39,38 +41,44 @@ public class ProductController {
     }
 
     @GetMapping("/product/add")
-    public String add(Model model){
+    public String add(Model model, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         model.addAttribute("product", new Product());
         model.addAttribute("categories",productService.getAllCategories());
         return "product/add";
     }
 
     @PostMapping("/product/add")
-    public String add(@ModelAttribute Product product){
+    public String add(@ModelAttribute Product product, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         productService.addProduct(product);
         return "redirect:/product/";
     }
 
     @GetMapping("/product/remove")
-    public String remove(@RequestParam("id") String id) {
+    public String remove(@RequestParam("id") String id, HttpSession session) {
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         productService.deleteProductById(id);
         return "redirect:/product/";
     }
 
     @GetMapping("/product/details")
-    public String details(@RequestParam("id") String id, Model model) {
+    public String details(@RequestParam("id") String id, Model model, HttpSession session) {
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         model.addAttribute("product", productService.getProductById(id));
         return "product/details";
     }
 
     @GetMapping(value = {"/product/{id}/edit"})
-    public String edit(Model model, @PathVariable String id){
+    public String edit(Model model, @PathVariable String id, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         model.addAttribute("product", productService.getProductById(id));
         return "product/edit";
     }
 
     @PostMapping(value = {"/product/edit"})
-    public String edit(@ModelAttribute Product product) {
+    public String edit(@ModelAttribute Product product, HttpSession session) {
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         productService.updateProduct(product);
         return "redirect:/product/";
     }
@@ -78,31 +86,36 @@ public class ProductController {
     
 
     @GetMapping(value = {"/category/{id}/edit"})
-    public String editCategory(Model model, @PathVariable String id){
+    public String editCategory(Model model, @PathVariable String id, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         model.addAttribute("category", productService.getCategoryById(id));
         return "category/edit";
     }
 
     @GetMapping(value = {"/product/category/add"})
-    public String addCategory(Model model){
+    public String addCategory(Model model, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         model.addAttribute("category", new Category());
         return "category/add";
     }
 
     @PostMapping(value = {"/category/add"})
-    public String addCategory(@ModelAttribute Category category){
+    public String addCategory(@ModelAttribute Category category, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         productService.addCategory(category);
         return "redirect:/product/";
     }
 
     @GetMapping(value = {"/category/remove"})
-    public String deleteCategory(@RequestParam("id") String id){
+    public String deleteCategory(@RequestParam("id") String id, HttpSession session){
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         productService.deleteCategoryById(id);
         return "redirect:/product/";
     }
 
     @PostMapping(value = {"/category/edit"})
-    public String editCategory(@ModelAttribute Category category) {
+    public String editCategory(@ModelAttribute Category category, HttpSession session) {
+        if(session.getAttribute("admin") == null) return "redirect:/login/";
         productService.updateCategory(category);
         return "redirect:/product/";
     }
@@ -133,11 +146,3 @@ public class ProductController {
 }
 
 
-class Login implements Interceptor{
-   public void preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-      HttpSession session = request.getSession();
-      if(session.getAttribute("loggedIn") == null && session.getAttribute("admin") == null){
-         response.sendRedirect("/login");
-      }
-   }
-}
