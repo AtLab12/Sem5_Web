@@ -189,4 +189,35 @@ public class ProductService {
         }
         
     }
+
+    public Boolean login(String username, String password) {
+        var iter = db.getCollection("users").find(eq("username",username)).iterator();
+        while (iter.hasNext()) {
+            var doc = iter.next();
+            var user = new Account(doc);
+            if(user.getPassword().equals(password)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        throw new IllegalArgumentException("Wrong username or password");
+    }
+
+    public Boolean adminlogin(String username, String password) {
+        var iter = db.getCollection("users").find(eq("username",username)).iterator();
+        while (iter.hasNext()) {
+            var doc = iter.next();
+            var user = new Account(doc);
+            if(user.getPassword().equals(password) && user.getAdmin()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        throw new IllegalArgumentException("Wrong username or password");
+
+    }
 }
